@@ -1,9 +1,88 @@
 body {
+	color: #fefbf7;
+	width: 100%;
+	background-color: #313131;
 
 }
 
+.header {
+	text-align: center;
+}
+
+.calc-wrapper {
+	margin: 0 auto;
+}
+
 .calculator {
-	background-color: gray;
-	width: 300px;
-	height: 600px;
+	background-color: #821e1d;
+	width: 320px;
+	height: 450px;
+	padding: 10px;
+	border-radius: 0px 0px 25px 25px;
+	margin: 0 auto;
+}
+
+.output-container {
+	background-color: #821e1d;
+	width: 320px;
+	padding: 20px 10px 10px 10px;
+	border-radius: 25px 25px 0 0;
+	margin: 0 auto;
+}
+
+#output {
+	width: 100%;
+	height: 60px;
+	background-color: #000;
+	color: #ff0000;
+	font-family: DigitalDream;
+	font-size: 40px;
+	position: relative;
+}
+
+.output-text {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0 5px 5px 5px;
+}
+
+.key-row {
+	overflow: hidden;
+}
+
+.title {
+	width: 230px;
+	height: 70px;
+	float: left;
+	margin: 5px;
+	font-family: ecliptic;
+	font-size: 31px;
+	text-align: center;
+	line-height: 70px;
+}
+
+.keys {
+	width: 70px;
+	height: 70px;
+	background-color: #1c1c1c;
+	float: left;
+	text-align: center;
+	margin: 5px;
+	font-family: ecliptic;
+	font-size: 40px;
+	line-height: 90px;
+	border-radius: 25px;
+}
+
+
+
+@font-face {
+    font-family: DigitalDream;
+    src: url(../fonts/DigitalDream.ttf);
+}
+
+@font-face {
+    font-family: ecliptic;
+    src: url(../fonts/ecliptic.ttf);
 }
