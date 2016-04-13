@@ -1,0 +1,35 @@
+<html>
+<body>
+
+<div>
+	<button type="button" onclick="changeColor()">CHANGE IT!</button>
+</div>
+<div id="currentColor"></div>
+
+<script>
+	var currentColor;
+
+	function randomizeColor() {
+	    var characters = '0123456789ABCDEF'.split('');
+    	var newColor = '#';
+    	for (var i = 0; i < 6; i++ ) {
+        	newColor += characters[Math.floor(Math.random() * 16)];
+    	}
+    	currentColor = newColor;
+    	return newColor;
+	}
+
+	function setInitialColor(){
+		document.body.style.backgroundColor = randomizeColor();
+	}
+
+	function changeColor(){
+		document.body.style.backgroundColor = randomizeColor();
+		document.getElementById("currentColor").innerHTML = "<h1>How about " + currentColor + "?</h1>";
+	}
+
+	setInitialColor();
+</script>
+
+</body>
+</html>
