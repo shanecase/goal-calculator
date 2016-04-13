@@ -1,13 +1,21 @@
 <html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
 <body>
 
-<div>
-	<button type="button" onclick="changeColor()">CHANGE IT!</button>
+<div class="main-box">
+	<div id="current-color"></div>
+	<button type="button" onclick="changeColor()">NO! CHANGE IT!</button>
+	<div id="previous-text"><h3>You were looking at</h3></div>
+	<div id="previous-swatch" onclick="changeBack();"></div>
+	<div>Click it to change back.</div>
 </div>
-<div id="currentColor"></div>
+
 
 <script>
 	var currentColor;
+	var previousColor;
 
 	function randomizeColor() {
 	    var characters = '0123456789ABCDEF'.split('');
@@ -21,12 +29,29 @@
 
 	function setInitialColor(){
 		document.body.style.backgroundColor = randomizeColor();
+		document.getElementById("current-color").innerHTML = "<h1>You're looking at " + currentColor + "</h1>";
+
 	}
 
 	function changeColor(){
+		previousColor = currentColor;
 		document.body.style.backgroundColor = randomizeColor();
-		document.getElementById("currentColor").innerHTML = "<h1>How about " + currentColor + "?</h1>";
+		document.getElementById("current-color").innerHTML = "<h1>How about " + currentColor + "?</h1>";
+		document.getElementById("previous-swatch").style.backgroundColor = previousColor;
+		document.getElementById("previous-swatch").innerHTML = previousColor;
 	}
+
+	function changeBack(){
+		var holdingColor;
+		document.body.style.backgroundColor = previousColor;
+		holdingColor = currentColor;
+		document.getElementById("previous-swatch").style.backgroundColor = currentColor;
+		document.getElementById("previous-swatch").innerHTML = currentColor;
+		document.getElementById("current-color").innerHTML = "<h1>You liked " + previousColor + " better?</h1>"
+		currentColor = previousColor;
+		previousColor = holdingColor;
+	}
+
 
 	setInitialColor();
 </script>
