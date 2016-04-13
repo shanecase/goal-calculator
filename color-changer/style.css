@@ -7,8 +7,8 @@
 	border-radius: 50px;
 }
 
-#previous-text {
-
+#previous-section {
+	display: none;
 }
 
 #previous-swatch {

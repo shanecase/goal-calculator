@@ -7,9 +7,11 @@
 <div class="main-box">
 	<div id="current-color"></div>
 	<button type="button" onclick="changeColor()">NO! CHANGE IT!</button>
-	<div id="previous-text"><h3>You were looking at</h3></div>
-	<div id="previous-swatch" onclick="changeBack();"></div>
-	<div>Click it to change back.</div>
+	<div id="previous-section">
+		<div id="previous-text"><h3>You were looking at</h3></div>
+		<div id="previous-swatch" onclick="changeBack();"></div>
+		<div>Click it to change back.</div>
+	</div>
 </div>
 
 
@@ -39,6 +41,7 @@
 		document.getElementById("current-color").innerHTML = "<h1>How about " + currentColor + "?</h1>";
 		document.getElementById("previous-swatch").style.backgroundColor = previousColor;
 		document.getElementById("previous-swatch").innerHTML = previousColor;
+		document.getElementById("previous-section").style.display = "initial";
 	}
 
 	function changeBack(){
