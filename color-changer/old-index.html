@@ -20,16 +20,14 @@
 	var currentColor;
 	var previousColor;
 
-	function randomizeColor(){
-		var newColor = '';
-		var rgbArray = [];
-		for (var i = 0; i < 3; i++) {
-			rgbArray.push(Math.floor(Math.random() * 255));
-		}
-		newColor = 'rgb(' + rgbArray + ')';
-		currentColor = newColor;
+	function randomizeColor() {
+	    var characters = '0123456789ABCDEF'.split('');
+    	var newColor = '#';
+    	for (var i = 0; i < 6; i++ ) {
+        	newColor += characters[Math.floor(Math.random() * 16)];
+    	}
+    	currentColor = newColor;
     	return newColor;
-
 	}
 
 	function setInitialColor(){
