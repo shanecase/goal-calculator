@@ -19,6 +19,8 @@
 <script>
 	var currentColor;
 	var previousColor;
+	var contrastColor;
+	var previousRgb = [];
 
 	function randomizeColor(){
 		var newColor = '';
@@ -28,6 +30,7 @@
 		}
 		newColor = 'rgb(' + rgbArray + ')';
 		currentColor = newColor;
+		previousRgb = rgbArray;
     	return newColor;
 
 	}
@@ -40,11 +43,32 @@
 
 	function changeColor(){
 		previousColor = currentColor;
+		setContrastColor(previousRgb);
 		document.body.style.backgroundColor = randomizeColor();
 		document.getElementById("current-color").innerHTML = "<h1>How about " + currentColor + "?</h1>";
 		document.getElementById("previous-swatch").style.backgroundColor = previousColor;
 		document.getElementById("previous-swatch").innerHTML = previousColor;
 		document.getElementById("previous-section").style.display = "initial";
+	}
+
+	function setContrastColor(rgb){
+		var brightness = ((rgb[0] * 299) + (rgb[1] * 587) + (rgb[2] * 114)) / 1000;
+		var difference = (Math.max(rgb[0], 255) - Math.min(rgb[0], 255)) + (Math.max(rgb[1], 255) - Math.min(rgb[1], 255)) + (Math.max(rgb[2], 255) - Math.min(rgb[2], 255));
+		if(Math.abs(brightness - 255) >= 125 && difference >= 500){
+			document.getElementById("previous-swatch").style.color = "white";
+		} else {
+		document.getElementById("previous-swatch").style.color = "black";
+		}
+	}
+
+	function findBrightness(rgb){
+		var brightness = ((rgb[0] * 299) + (rgb[1] * 587) + (rgb[2] * 114)) / 1000;
+
+	}
+
+	function findColorDifference(rgb){
+		var difference = (Math.max(rgb[0], 255) - Math.min(rgb[0], 255)) + (Math.max(rgb[1], 255) - Math.min(rgb[1], 255)) + (Math.max(rgb[2], 255) - Math.min(rgb[2], 255));
+	
 	}
 
 	function changeBack(){
