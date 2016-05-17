@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1>Time of Day</h1>
+<span id="hours"></span>:
+<span id="minutes"></span>:
+<span id="seconds"></span>
+
+<script>
+	function updateTime(){
+		var d = new Date();
+		var hour = d.getHours(); 
+		var min = d.getMinutes(); 
+		var sec = d.getSeconds();
+		document.getElementById("hours").innerHTML = hour;
+		document.getElementById("minutes").innerHTML = min;
+		document.getElementById("seconds").innerHTML = sec;
+		console.log("ran");
+	}
+
+	setInterval(updateTime, 500);
+</script>
+
+</body>
+</html>

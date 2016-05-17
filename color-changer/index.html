@@ -7,7 +7,7 @@
 
 <div class="main-box">
 	<div id="current-color"></div>
-	<button type="button" onclick="changeColor()">NO! CHANGE IT!</button>
+		<button type="button" onclick="changeColor()">NO! CHANGE IT!</button>
 	<div id="previous-section">
 		<div id="previous-text"><h3>You were looking at</h3></div>
 		<div id="previous-swatch" onclick="changeBack();"></div>
@@ -67,8 +67,7 @@
 	}
 
 	function findColorDifference(rgb){
-		var difference = (Math.max(rgb[0], 255) - Math.min(rgb[0], 255)) + (Math.max(rgb[1], 255) - Math.min(rgb[1], 255)) + (Math.max(rgb[2], 255) - Math.min(rgb[2], 255));
-	
+		var difference = (Math.max(rgb[0], 255) - Math.min(rgb[0], 255)) + (Math.max(rgb[1], 255) - Math.min(rgb[1], 255)) + (Math.max(rgb[2], 255) - Math.min(rgb[2], 255));	
 	}
 
 	function changeBack(){

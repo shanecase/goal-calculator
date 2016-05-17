@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+.textClasses {
+	color: red;
+}
+
+#one {
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>Goal Calculator</h1>
+<p class="textClasses" id="one">
+	# of Backers: <input type="text" id="backers">
+</p>
+<p class="textClasses" id="two">
+	Average Contribution: <input type="text" id="contribution">
+</p>
+<button onclick="calculateGoal()">What's my Goal?</button>
+<h2 id="goal-output"></h2>
+
+<script>
+function calculateGoal() {
+    var numBackers = document.getElementById("backers").value;
+    var avgCont = document.getElementById("contribution").value;
+    var goalFinal = numBackers * avgCont;
+    document.getElementById("goal-output").innerHTML = "$" + goalFinal;
+}
+</script>
+
+</body>
+</html>
